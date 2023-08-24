@@ -7,6 +7,7 @@ from hangman_art import stages, logo
 
 print(logo)
 
+#choosing game language
 user_language = input("Language Türkçe or English ? \n").lower()
 
 if user_language == 'english':
@@ -36,7 +37,8 @@ while not end_of_game:
     guess = input("Lütfen bir harf tahmin edin: ").lower()
         
   clear()  
-      
+  
+  #Checking the letter that entered if it was guessed before
   if guess in display:
     print("You already guessed this letter." if user_language == 'english' else "Bu harfi zaten tahmin etmiştiniz. ")
 
@@ -54,7 +56,7 @@ while not end_of_game:
       end_of_game = True
       print(f"You lose. The chosen word was : {chosen_word}" if user_language == 'english' else f"Kaybettiniz. Seçilen kelime {chosen_word} idi. ")
 
-          #Join all the elements in the list and turn it into a String.
+   #Join all the elements in the list and turn it into a String.
   print(f"{' '.join(display)}")
 
     #Check if user has got all letters.
