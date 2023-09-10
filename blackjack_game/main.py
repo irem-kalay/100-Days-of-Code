@@ -3,6 +3,8 @@ from replit import clear
 from art import logo
 
 def calculate(list):
+  if sum(list)== 21 and len(list) == 2: #The condition of blackjack represented.
+    return 0
   total = 0
   for i in range(0, len(list)):
     total += list[i]
@@ -51,6 +53,9 @@ while start:
     computer.append(choose_random(cards))
     score_player = calculate(player)
     score_computer = calculate(computer)
+    if score_player == 0:
+      print(" Blackjack, you win. ") #Blackjack condition.
+      get_card = False #Not getting into while loop "Do you want to get another card?".
     print(f" Your cards are: {player}, current score: {score_player}.\n Computer's first card is: {computer[0]} \n")
     
     while get_card:
